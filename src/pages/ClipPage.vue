@@ -53,7 +53,8 @@ let refreshRandomFileName = () => {
 const clipStore = useClipStore();
 
 let onSaveBtnClick = async () => {
-  await PutFile(filename.value, code.value, clipStore.visibility, "text");
+  const response = await PutFile(filename.value, code.value, clipStore.visibility, "text");
+  console.log(response);
   modified.value = false;
 }
 
