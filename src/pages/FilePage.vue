@@ -22,7 +22,8 @@ interface UploadedFile {
 let uploadedFiles: Ref<UploadedFile[]> = ref([]);
 
 const uploadSingle = async (index: number, filename: string, file: File) => {
-  await PutFile(filename, file, fileStore.visibility, "file");
+   const response = await PutFile(filename, file, fileStore.visibility, "file");
+    console.log(response);
   uploadedFiles.value[index - 1].done = true;
 }
 
